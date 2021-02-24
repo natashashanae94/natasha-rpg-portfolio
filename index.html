@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Natasha Johnson - Web Developer & Designer</title>
+        <meta charset="utf-8">
+
+        <!--Styles-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="icon" type="image/png" href="css/img/tasha.png" >
+
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!--Scripts-->
+        <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
+        <script src="js/jquery.spritely-0.6.js" type="text/javascript"></script>
+        <script src="js/data.js" type="text/javascript"></script>  
+        <script src="js/game.js" type="text/javascript"></script>
+        <!--[if lt IE 9]>
+        <script type="text/javascript">
+            window.location = 'ie.html';
+        </script>
+        <![endif]-->
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#innerLoading .me').sprite({fps: 9, no_of_frames: 4}).spState(1);
+                const game = new Game();
+            });	
+
+            function startGame() {
+                $('html, body').animate({scrollTop: 0});
+                // $('#loadingGame').fadeOut(3000, function(){
+                //     $(this).remove();
+                // });
+                setTimeout(() => {$('#loadingGame').remove()}, 1200)
+            }
+    
+        </script>
+    </head>
+    <body onload="startGame()">
+
+        <!--LOADING-->
+        <div id="loadingGame">
+            <div id="innerLoading">
+                <div class="me"></div>
+                <p>Loading Portfolio</p>
+                <span> Please wait.</span>
+            </div>
+        </div>
+
+        <!--NAVIGATION-->
+        <nav>
+            <ul class="clearfix">
+                <li><a href="#aboutHouse">About Me</a></li>
+                <li><a href="#serviceHouse">Project 1</a></li>
+                <li><a href="#portfolioHouse">Project 2</a></li>
+                <li><a href="#blogHouse">Project 3</a></li>
+                <li><a href="#boat">Contact</a></li>
+                <li class="last"><a href="#howToPlay">?</a></li>
+            </ul>
+        </nav>
+    
+        <!--PINK TREES-->
+        <div id="leftPinkTrees"></div>
+        <div id="rightPinkTrees"></div>
+
+        <div id="wrapper" class="grass">
+
+            <!--START TEXT-->
+            <p id="startText">
+                <img src="css/img/arrow-keys.png" alt="keyboard arrows">
+
+                Press the <b>arrow keys</b> to explore.
+            </p>
+            <!--START HOUSE-->
+            <div id="startHouse" class="StartHouseArea"></div>
+            <div id="startHouseHole" class="startHole"></div>
+            <div id="mainRoad" class="road"></div>
+         
+            <div id="leftFence"></div>
+		    <div id="rightFence"></div>
+
+            <div id="natasha"></div>
+
+            <!--ABOUT ME-->
+            <div id="aboutRoad" class="road side"></div>
+            <div id="aboutHouse" class="house">
+                <div class="door"></div>
+                <div class="lightbox">
+                    <div class="inner about">
+                        <div class="portfolioItem">
+                            <h2>About Me</h2>
+                            <p>Natasha Johnson - Web Designer</p>
+                            <img src="css/img/natasha-johnson-avatar.png" alt="natasha" width="300px" height="auto"/>
+                            <p>My Skills:</p>
+                            <ul>
+                                <li>- HTML 5, CSS 3, JavaScript</li>
+                                <li>- MERN (MongoDB, Express.js, React.js, Node.js)</li>
+                                <li>- PHP</li>
+                                <li>- WordPress</li>
+                                <li>- PhotoShop</li>
+                                <li>- Adobe XD</li>
+                                <li>- Google Analytics</li>
+                            </ul> 
+                            <p>Thinking outside the box is what I do! Check out my resume:<a href="https://natashashanae.files.wordpress.com/2020/10/nsjohnson-resume-2020.pdf"  target="_blank"><img class="liveButton" src="css/img/resume-button.png" alt="live-button"/></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="aboutSign" class="sign"><span>About Me</span></div>
+            <div id="aboutHole" class="hole"></div>
+            
+            <!--SKILLS & SERVICES-->
+            <div id="serviceRoad" class="road side"></div>
+            <div id="serviceHouse" class="house">
+                <div class="door"></div>
+                <div class="lightbox">
+                    <div class="inner service">
+                      <div class="portfolioItem">
+                        <h2>LaunchHouse</h2>
+                        <img class="portfolioImage" src="css/img/launchHouse.gif" alt="launchHouse " width="90%" height="auto" />
+                        <p>Made with React.js, MongoDB, Express.js, Node.js, Sass <a href="https://launchhouse.herokuapp.com/" target="_blank"><img class="liveButton" src="css/img/live-button.png" alt="live-button"/></a></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="serviceSign" class="sign"><span>Project 1</span></div>
+            <div id="serviceHole" class="hole"></div>
+
+            <!--PORTFOLIO-->
+            <div id="portfolioRoad" class="road side"></div>
+            <div id="portfolioHouse" class="house">
+                <div class="door"></div>
+                <div class="lightbox">
+                    <div class="inner portfolio clearfix">
+                        <div class="portfolioItem">
+                            <h2>Morning Star Baptist Church</h2>
+                            <img class="portfolioImage" src="css/img/msbcoc.gif" alt="msbcoc.org" width="90%" height="auto" />
+                            <p>Made with WordPress, PHP, JavaScript<a href="https://msbcoc.org/" target="_blank"><img class="liveButton" src="css/img/live-button.png" alt="live-button"/></a></p>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+            <div id="portfolioSign" class="sign"><span>Project 2</span></div>
+            <div id="portfolioHole" class="hole"></div>
+
+            <!--BLOG-->
+            <div id="blogRoad" class="road side"></div>
+            <div id="blogHouse" class="house">
+                <div class="door"></div>
+                <div class="lightbox">
+                    <div class="inner blog">
+                        <div class="portfolioItem">
+                            <h2>Project 3</h2>
+                            <p>Coming Soon!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="blogSign" class="sign"><span>Project 3</span></div>
+            <div id="blogHole" class="hole"></div>
+
+            <!--VIEW-->
+            <div id="rightTrees" class="trees"></div>
+            <div id="leftTrees" class="trees"></div>
+
+            <!--NATURE-->
+            <div id="endSea" class="sea"></div>
+            <div id="endBridge" class="bridge"></div>
+            <div id="boat" class="isMoored">
+                <div class="meSail"></div>
+            </div>
+
+            <!--CONTACT-->
+            <div id="contact">
+                <h2>Wanna Work Together?</h2>
+                <div id="comment" class="mt-5">
+                   <p>Visit my <a href="https://www.linkedin.com/in/natashashanae/" target="_blank">LinkedIn</a>.
+                   See my <a href="https://github.com/natashashanae94" target="_blank">GitHub</a>.
+                   Read my <a href="https://natashashanae.wordpress.com/" target="_blank">Blog</a>
+                   . . . Or just reach me through <a href="mailto:natashashanae94@gmail.com">Email</a>.  Anything's good.
+                    </p>
+                </div>
+                <p class="tutorial">Natasha Johnson © 2021. Special thanks to <a href="https://www.smashingmagazine.com/2012/05/develop-a-one-of-a-kind-cssjs-based-game-portfolio/" target="_blank">Daniel Sternlicht</a> and <a href="https://www.deviantart.com/pokemonfangames/gallery/28808269/tiles-and-tilesets" target="_blank">DeviantArt</a>.</p>
+            </div>
+
+            <!--FLOWERS-->
+            <div class="flowers r1"></div>
+            <div class="flowers r2"></div>
+            <div class="flowers r3"></div>
+            <div class="flowers r4"></div>
+            <div class="flowers r5"></div>
+            <div class="flowers r6"></div>
+            <div class="flowers r7"></div>
+            <div class="flowers r8"></div>
+            <div class="flowers r9"></div>
+            <div class="flowers r10"></div>
+
+            <!--HOW TO PLAY-->
+            <div id="howToPlay">
+                <div class="lightbox">
+                    <div class="inner howtoplay">
+                        <div class="portfolioItem">
+                            <h2>Welcome to my portfolio!</h2>
+                            <ul class="directions">
+                                <li><img src="css/img/arrow-keys.png" alt="Arrow Keys" width="150px"/>Press the arrow keys to move around.</li>
+                                <li><img src="css/img/house1.png" alt="House" width="150px" height="auto"/>Visit all 4 houses.</li>
+                                <li><img src="css/img/boat.png" alt="House" width="200px" height: auto; />Catch the boat before it leaves!</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

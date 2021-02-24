@@ -1,0 +1,875 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@font-face {
+  font-family: "SilkscreenNormal";
+  src: url("fonts/slkscr-webfont.eot");
+  src: url("fonts/slkscr-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/slkscr-webfont.woff") format("woff"), url("fonts/slkscr-webfont.ttf") format("truetype"), url("fonts/slkscr-webfont.svg#SilkscreenNormal") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+ul, p, dl, hr, h1, h2, h3, h4, h5, h6, pre, table, address, fieldset, blockquote {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #000;
+}
+
+:root {
+  --pixel-size: 2px;
+}
+
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font: "SilkscreenNormal", Arial, sans-serif;
+}
+
+#natasha {
+  position: absolute;
+  width: 32px;
+  height: 48px;
+  background: url("img/miko.png") no-repeat -64px 0;
+  top: 0px;
+  z-index: 53;
+}
+#natasha::after {
+  background: rgba(0, 0, 0, 0.3);
+  width: 16px;
+  height: 10px;
+  content: "";
+  bottom: -2px;
+  left: 8px;
+  position: absolute;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  -ms-border-radius: 75px;
+  border-radius: 75px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 12;
+}
+#natasha .down {
+  background: url("img/miko.png") no-repeat -32px 0;
+}
+#natasha .up {
+  background: url("img/miko.png") 0 -96px;
+}
+#natasha .right {
+  background: url("img/miko.png") 0 -64px;
+}
+#natasha .left {
+  background: url("img/miko.png") 0 -32px;
+}
+
+#wrapper {
+  border: 1px solid #c7c7c7;
+  margin: 0 auto;
+  width: 100%;
+  height: 2500px;
+  position: relative;
+  background: url(img/grassbg.png) repeat;
+  overflow: hidden;
+}
+
+#loadingGame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f7f7f7;
+  z-index: 999;
+}
+
+#innerLoading {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  margin: -50px 0 0 -100px;
+  text-align: center;
+  font-family: "Lekton", Helvetica, Arial, sans-serif;
+}
+#innerLoading p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+#innerLoading span {
+  color: #909090;
+  font-size: 12px;
+}
+#innerLoading .me {
+  width: 32px;
+  height: 48px;
+  background: url(img/miko.png) no-repeat 0 0;
+  margin: 0 auto 10px;
+}
+
+#share {
+  position: fixed;
+  z-index: 700;
+  right: 0;
+  top: 20%;
+  width: 70px;
+  padding: 10px 5px;
+  background: #f7f7f7;
+  box-shadow: -1px 2px 3pc rgba(0, 0, 0, 0.4);
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  -webkit-border-radius: 5px 0 0 5px;
+  -moz-border-radius: 5px 0 0 5px;
+  -ms-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+}
+
+nav {
+  position: fixed;
+  top: -85px;
+  height: 55px;
+  left: 50%;
+  width: 960px;
+  margin: 10px 0 0 -480px !important;
+  text-align: center;
+  color: #ffffff;
+  z-index: 800;
+  border: 3 solid #ffffff;
+  border-radius: 0.25rem;
+  background: #000;
+  transition: top 0.4s ease-in-out 0s;
+}
+
+nav.show {
+  top: 0;
+}
+
+nav ul {
+  width: 100%;
+  padding-left: 30px;
+}
+
+nav a {
+  float: left;
+  padding: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  text-shadow: 1px 1px 0 #000;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+/*START TEXT*/
+#startText {
+  position: absolute;
+  top: 240px;
+  left: 50%;
+  width: 200px;
+  margin: 0 0 0 -96px;
+  z-index: 20;
+  text-align: center;
+  -webkit-animation: fade 2.5s ease infinite;
+  -moz-animation: fade 2.5s ease infinite;
+  animation: fade 2.5s ease infinite;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#startText img {
+  width: 80px;
+  display: block;
+  margin: 0 auto 5px;
+  padding-right: 4px;
+}
+
+.liveButton {
+  margin: 0 35px 0 30px;
+  width: 150px;
+  height: auto;
+}
+
+/*View*/
+.portfolioItem {
+  padding: 50px;
+}
+
+.portfolioImage {
+  margin: 30px 0 30px 0;
+}
+
+#leftPinkTrees {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  background: url(img/pinkTree.png) repeat 0 0;
+  width: 232px;
+  height: 212px;
+  z-index: 51;
+}
+
+#rightPinkTrees {
+  position: absolute;
+  top: 500px;
+  right: 0;
+  background: url(img/pinkTree.png) repeat 0 0;
+  width: 232px;
+  height: 212px;
+  z-index: 51;
+}
+
+#rightTrees {
+  right: 50%;
+  width: 57px;
+  top: 0px;
+  height: 100%;
+  margin-right: -172px;
+}
+
+#leftTrees {
+  left: 48%;
+  width: 58px;
+  top: 0px;
+  height: 100%;
+  margin-left: -136px;
+}
+
+.trees {
+  position: absolute;
+  background: url(img/orange-tree.png) repeat 0 0;
+}
+
+.sea {
+  position: absolute;
+  left: 0;
+  background: url("img/sea.png") repeat;
+  width: 100%;
+  z-index: 50;
+}
+
+#endSea {
+  bottom: 0;
+  height: 800px;
+  -webkit-animation: seamove 6s linear infinite;
+  -moz-animation: seamove 6s linear infinite;
+  animation: seamove 6s linear infinite;
+}
+#endSea:after {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  background: url("img/seaStart.png") repeat center bottom;
+  height: 9px;
+  width: 100%;
+  z-index: 51;
+  content: "";
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.3);
+}
+
+@-webkit-keyframes seamove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 65px 0;
+  }
+}
+@-moz-keyframes seamove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 65px 0;
+  }
+}
+@keyframes seamove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 65px 0;
+  }
+}
+.bridge {
+  position: absolute;
+  left: 50%;
+  width: 210px;
+  background: url(img/bridge.png) repeat-y;
+  z-index: 52;
+  margin: 0 0 0 -105px;
+}
+
+#endBridge {
+  bottom: 623px;
+  height: 200px;
+}
+#endBridge::after {
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  background: url(img/seaStart.png) repeat center bottom;
+  height: 9px;
+  width: 100%;
+  z-index: 51;
+  content: "";
+}
+
+#boat {
+  position: absolute;
+  z-index: 53;
+  bottom: 536px;
+  width: 420px;
+  margin-left: -210px;
+  height: 208px;
+  background: url(img/boat.png) no-repeat center;
+  cursor: pointer;
+  left: 50%;
+  -webkit-transition: all 5s linear 1.5s;
+  -moz-transition: all 5s linear 1.5s;
+  -ms-transition: all 5s linear 1.5s;
+  -o-transition: all 5s linear 1.5s;
+  transition: all 5s linear 1.5s;
+}
+#boat .meSail {
+  position: absolute;
+  width: 32px;
+  height: 48px;
+  background: url("img/miko.png") no-repeat 0 -48px;
+  top: 75px;
+  left: 100px;
+  display: none;
+  z-index: 54;
+}
+#boat .meSail::after {
+  background: rgba(0, 0, 0, 0.3);
+  width: 16px;
+  height: 10px;
+  content: "";
+  bottom: -2px;
+  left: 8px;
+  position: absolute;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  -ms-border-radius: 75px;
+  border-radius: 75px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 12;
+}
+#boat .sailBack {
+  left: 100%;
+  margin-left: 0;
+}
+
+#boat.sail {
+  left: -20%;
+}
+
+#boat.sailBack {
+  left: 100%;
+  margin-left: 0;
+}
+
+#mainRoad {
+  width: 200px;
+  height: 100%;
+  top: 0;
+  z-index: 8;
+  left: 50%;
+  margin: 0 0 0 -100px;
+}
+
+#leftFence {
+  width: 6px;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  margin: 0 0 0 -106px;
+  background: url(img/fenceVer.png) repeat-y top;
+  position: absolute;
+}
+
+#rightFence {
+  width: 6px;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  margin: 0 0 0 102px;
+  background: url(img/fenceVer.png) repeat-y top;
+  position: absolute;
+}
+
+.road {
+  position: absolute;
+  background: url("img/floor.png");
+}
+
+.road.side {
+  width: 50%;
+  height: 200px;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.road.side:before {
+  width: 100%;
+  top: -15px;
+  left: 0;
+  height: 15px;
+  background: url(img/fenceHor.png) repeat-x top;
+  content: "";
+  position: absolute;
+}
+.road.side:after {
+  width: 100%;
+  bottom: -15px;
+  left: 0;
+  height: 15px;
+  background: url(img/fenceHor.png) repeat-x top;
+  content: "";
+  position: absolute;
+}
+
+#aboutRoad {
+  left: 0px;
+  top: 493px;
+}
+
+#serviceRoad {
+  right: 0;
+  top: 779px;
+}
+
+#portfolioRoad {
+  left: 0;
+  top: 1037px;
+}
+
+#blogRoad {
+  right: 0;
+  top: 1259px;
+}
+
+.house {
+  position: absolute;
+  z-index: 56;
+  cursor: pointer;
+}
+.house:hover + div.sign span {
+  opacity: 1;
+}
+
+.door {
+  position: absolute;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.hole {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 50;
+  position: absolute;
+}
+
+/**
+  * HOUSES
+  *
+  **/
+/*START HOUSE*/
+#startHouse {
+  background: url(img/startHouse.png) no-repeat;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 250px;
+  height: 277px;
+  z-index: 54;
+  margin: -35px 0 0 -122px;
+}
+
+#startHouseHole {
+  top: 167px;
+  height: 47px;
+}
+
+.startHole {
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  margin: 0 0 0 -25px;
+  z-index: 52;
+}
+
+/*ABOUT HOUSE*/
+#aboutHouse {
+  background: url(img/house1.png) no-repeat;
+  width: 247px;
+  height: 158px;
+  top: 480px;
+  left: 20px;
+}
+#aboutHouse .door {
+  background: url(img/house1-door.png) no-repeat;
+  width: 46px;
+  height: 50px;
+  top: 110px;
+  left: 56px;
+}
+#aboutHouse .open {
+  left: 105px;
+  width: 0;
+}
+
+#aboutHole {
+  width: 46px;
+  height: 45px;
+  top: 589px;
+  left: 76px;
+}
+
+/*SERVICE HOUSE*/
+#serviceHouse {
+  background: url(img/house2.png) no-repeat;
+  width: 250px;
+  height: 250px;
+  top: 701px;
+  right: 50px;
+}
+#serviceHouse .door {
+  background: url(img/house2-door.png) no-repeat;
+  width: 55px;
+  height: 39px;
+  bottom: 47px;
+  right: 81px;
+}
+#serviceHouse .open {
+  bottom: 47px;
+  height: 0;
+}
+
+#serviceHole {
+  width: 55px;
+  height: 37px;
+  top: 865px;
+  right: 134px;
+}
+
+/*PORTFOLIO HOUSE*/
+#portfolioHouse {
+  background: url(img/house4.png) no-repeat;
+  width: 255px;
+  height: 255px;
+  top: 970px;
+  left: 50px;
+}
+#portfolioHouse .door {
+  background: url(img/house4-door.png) no-repeat;
+  width: 50px;
+  height: 36px;
+  bottom: 74px;
+  left: 83px;
+}
+#portfolioHouse .open {
+  right: 83px;
+  width: 0;
+}
+
+#portfolioHole {
+  width: 50px;
+  height: 38px;
+  top: 1114px;
+  left: 133px;
+}
+
+/*BLOG HOUSE*/
+#blogHouse {
+  background: url(img/House3.png) no-repeat;
+  width: 198px;
+  height: 204px;
+  top: 1220px;
+  right: 120px;
+}
+#blogHouse .door {
+  background: url(img/house3-door.png) no-repeat;
+  width: 47px;
+  height: 58px;
+  bottom: 14px;
+  right: 105px;
+}
+#blogHouse .open {
+  bottom: 69px;
+  height: 0;
+}
+
+#blogHole {
+  width: 50px;
+  height: 58px;
+  bottom: 1095px;
+  right: 227px;
+}
+
+/*FLOWERS*/
+.flowers {
+  position: relative;
+  z-index: 49;
+  width: 100px;
+  height: 50px;
+  background: url(img/flower.png);
+}
+
+.r1 {
+  top: 20%;
+  left: 90%;
+}
+
+.r2 {
+  top: 55%;
+  left: 15%;
+}
+
+.r3 {
+  top: 20%;
+  left: 65%;
+}
+
+.r4 {
+  top: 5%;
+  left: 15%;
+}
+
+.r5 {
+  top: 35%;
+  left: 70%;
+}
+
+.r6 {
+  top: 85%;
+  left: 82%;
+}
+
+.r7 {
+  top: 65%;
+  left: 62%;
+}
+
+.r8 {
+  top: 0%;
+  left: 70%;
+}
+
+.r9 {
+  top: 15%;
+  left: 10%;
+}
+
+.r10 {
+  top: 35%;
+  left: 25%;
+}
+
+/*Light Box*/
+.house .lightbox {
+  display: none;
+}
+
+#dark {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+}
+
+#lightbox {
+  width: 900px;
+  height: 620px;
+  left: 50%;
+  top: 50%;
+  margin: -300px 0 0 -450px;
+  position: fixed;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+  color: #000;
+  z-index: 905;
+  display: none;
+  background-color: #FFF1e6;
+}
+#lightbox h2 {
+  font-size: 40px;
+}
+#lightbox #closeLB {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 910;
+  color: #222;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+#lightbox:hover {
+  color: #000;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+#contact {
+  position: absolute;
+  bottom: 40px;
+  height: 500px;
+  left: 50%;
+  width: 800px;
+  margin-left: -400px;
+  z-index: 51;
+  opacity: 0;
+  transition: all 3s linear 2.5s;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+  color: #ffffff;
+  font-size: 40px;
+}
+
+#contact.show {
+  opacity: 1;
+}
+
+#comment {
+  background: #FFF1e6;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  color: #000;
+  overflow-y: auto;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+  font-size: 16px;
+  margin-top: 20px;
+  line-height: 1.9;
+}
+
+.tutorial {
+  margin-top: 5px;
+  font-size: 9px;
+}
+.tutorial a {
+  color: #ffffff;
+}
+
+/*SIGNS*/
+.sign {
+  position: absolute;
+  background: url(img/sign.png) no-repeat center;
+  width: 30px;
+  height: 34px;
+  z-index: 58;
+  cursor: pointer;
+}
+.sign span {
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+  font-size: 11px;
+  opacity: 0;
+  background: #000;
+  position: absolute;
+  top: -35px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: #fff;
+  display: block;
+  width: 80px;
+  text-align: center;
+  left: 50%;
+  margin-left: -50px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -ms-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  line-height: 2em;
+}
+.sign span::after {
+  border-top: 6px solid #000;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  content: "";
+  left: 50%;
+  margin-left: -6px;
+  bottom: -6px;
+  position: absolute;
+}
+.sign span:hover span {
+  opacity: 1;
+}
+
+#aboutSign {
+  left: 370px;
+  top: 575px;
+}
+
+#serviceSign {
+  right: 350px;
+  top: 867px;
+}
+#serviceSign span {
+  width: 140px;
+  margin-left: -80px;
+}
+
+#portfolioSign {
+  left: 290px;
+  top: 1100px;
+}
+#portfolioSign span {
+  width: 110px;
+  margin-left: -65px;
+}
+
+#blogSign {
+  right: 370px;
+  top: 1350px;
+}
+
+/*HOW TO PLAY*/
+#howToPlay {
+  display: none;
+}
+
+.last {
+  float: right;
+}
+
+.directions li {
+  padding: 30px;
+}
+.directions li img {
+  padding-right: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
