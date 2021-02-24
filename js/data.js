@@ -16,6 +16,21 @@ const notifications = [
     {
         id: 1,
         type: 'error',
-        text: 'You can\'t teleport here.'
+        text: 'This is an error 1.'
+    },
+    {
+        id: 2,
+        type: 'error',
+        text: 'This is an error 2.'
+    }
+    {
+        id: 3,
+        type: 'error',
+        text: 'This is an error 3.'
+    }
+    {
+        id: 4,
+        type: 'error',
+        text: 'This is an error 4.'
     }
 ];
