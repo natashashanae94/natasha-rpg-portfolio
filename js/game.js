@@ -402,7 +402,7 @@ Game.prototype = {
 		
 		// Sea Handler section
 		if(elmTop > $('#wrapper').height() - $('#endSea').height() - player.height()) {
-			//this.showNotificationsBar(notifications[2]);
+			this.showNotificationsBar(notifications[2]);
 			if(elmLeft > $(window).width() / 2 - $('#endBridge').width() / 2 && elmLeft < $(window).width() / 2 + $('#endBridge').width() / 2 - player.width()) {				
 				if(elmTop > $('#wrapper').height() - $('#endSea').height() + $("#endBridge").height() - 70 - player.height()) {
 				 	return false;
@@ -420,7 +420,7 @@ Game.prototype = {
 	shipSail: function() {
 		$('html, body').animate({scrollTop: $("#wrapper").height() - $("#endSea").height() + 20});
 		var ship = $('#boat');
-		//this.hideNotificationBar();
+		this.hideNotificationBar();
 		this.player.stop(true, true).fadeOut('fast');
 		ship.find('.meSail').delay(500).fadeIn('fast');
 		ship.removeAttr('class').addClass('sail');
