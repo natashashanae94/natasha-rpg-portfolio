@@ -52,11 +52,11 @@ Game.prototype = {
 			}
 		});
 		
-		$('.sea').unbind('click').bind('click', function(e){			
+		$('.sea').click(function(e) {			
 			me.showNotificationsBar(notifications[3]);
 		});
 		
-		$('.house').unbind('click').bind('click', function(){
+		$('.house').click(function(){
 			var target = '#' + $(this).attr('id');
 			me.moveDirectToHouse(target);
 		});
