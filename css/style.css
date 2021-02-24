@@ -107,21 +107,36 @@ body {
   margin: 0 auto 10px;
 }
 
-#share {
+#notifications {
   position: fixed;
-  z-index: 700;
-  right: 0;
-  top: 20%;
-  width: 70px;
-  padding: 10px 5px;
-  background: #f7f7f7;
-  box-shadow: -1px 2px 3pc rgba(0, 0, 0, 0.4);
-  border: 1px solid #e7e7e7;
-  text-align: center;
-  -webkit-border-radius: 5px 0 0 5px;
-  -moz-border-radius: 5px 0 0 5px;
-  -ms-border-radius: 5px 0 0 5px;
-  border-radius: 5px 0 0 5px;
+  bottom: -60px;
+  left: 10%;
+  width: 80%;
+  height: 50px;
+  border-radius: 5px 5px 0 0;
+  z-index: 790;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+  background-color: #FFF1e6;
+}
+#notifications .inner {
+  padding: 20px 40px 20px 50px;
+}
+#notifications img {
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+#notifications .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #a7a7a7;
+  cursor: pointer;
+  font-family: "SilkscreenNormal", Arial, sans-serif;
+}
+#notifications .close:hover {
+  color: #444;
 }
 
 nav {

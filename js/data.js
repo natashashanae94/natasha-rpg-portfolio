@@ -16,21 +16,25 @@ const notifications = [
     {
         id: 1,
         type: 'error',
-        text: 'This is an error 1.'
+        text: 'You cannot teleport here.',
+        img: 'css/img/tasha.png'
     },
     {
         id: 2,
         type: 'error',
-        text: 'This is an error 2.'
+        text: 'If you\'re in a hurry, click anywhere on the road to teleport OR use the navigation bar to explore the town.',
+        img: 'css/img/tasha.png'
     },
     {
         id: 3,
         type: 'error',
-        text: 'This is an error 3.'
+        text: 'Click on the boat to reveal my contact information.',
+        img: 'css/img/tasha.png'
     },
     {
         id: 4,
         type: 'error',
-        text: 'This is an error 4.'
+        text: 'I can\'t swim, you idiot!',
+        img: 'css/img/tasha.png'
     }
 ];
