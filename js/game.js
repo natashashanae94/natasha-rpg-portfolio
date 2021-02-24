@@ -52,7 +52,7 @@ Game.prototype = {
 			}
 		});
 		
-		$('.sea').unbind('click').bind('click', function(e){			
+		$('.sea').click(function(e) {			
 			me.showNotificationsBar(notifications[3]);
 		});
 		
